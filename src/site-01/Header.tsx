@@ -1,13 +1,13 @@
 import React from 'react';
 
 type HeaderType = {
-	title: string
+	titleForHeader: string
 }
 
 export const Header = (props: HeaderType) => {
 	return (
 		<>
-			{props.title}
+			{props.titleForHeader}
 		</>
 	);
 };
