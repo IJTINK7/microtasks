@@ -1,7 +1,8 @@
-// import React from "react";
-import React, {MouseEvent} from "react";
+import React from "react";
+// import React, {MouseEvent} from "react";
 // import React, {useState} from 'react';
 import './App.css';
+import {Button} from "./03-button/components/Button";
 // import {Header} from "./01-site/Header";
 // import {Body} from "./01-site/Body";
 // import {Footer} from "./01-site/Footer";
@@ -46,9 +47,9 @@ function App() {
     // const foo2=(sentNumber: number)=>{
     //     console.log(sentNumber)
     // }
-    const onClickHandler = (event: MouseEvent<HTMLButtonElement>, name: string) => {
-        console.log(`Hello, my name is ${name}`)
-    }
+    // const onClickHandler = (event: MouseEvent<HTMLButtonElement>, name: string) => {
+    //     console.log(`Hello, my name is ${name}`)
+    // }
   return (
     <div className="App">
         {/*03-button-data*/}
@@ -58,8 +59,8 @@ function App() {
         {/*<button onClick={(event)=>{onClickHandler(event, "Valera")}}>MyYouTubeChannel-2</button>*/}
         {/*<button onClick={foo1}>1</button>*/}
         {/*<button onClick={()=>foo2(100200)}>2</button>*/}
-        <button onClick={(event)=>{onClickHandler(event, "Anton")}}>MyYouTubeChannel-1</button>
-        <button onClick={(event)=>{onClickHandler(event, "Valera")}}>MyYouTubeChannel-2</button>
+        <Button title={"MyYouTubeChannel-1"}/>
+        <Button title={"MyYouTubeChannel-2"}/>
 
         {/*01-site data */}
         {/*<Header titleForHeader={"NEW HEADER"}/>*/}
