@@ -7,7 +7,7 @@ import {Footer} from "./site-01/Footer";
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header title={"NEW BODY"}/>
       <Body/>
       <Footer/>
     </div>
