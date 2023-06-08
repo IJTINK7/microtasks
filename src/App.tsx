@@ -50,6 +50,18 @@ function App() {
     // const onClickHandler = (event: MouseEvent<HTMLButtonElement>, name: string) => {
     //     console.log(`Hello, my name is ${name}`)
     // }
+    const Button1Foo = () =>{
+        console.log(`Hello, my name is Alex`)
+    }
+    const Button2Foo = () =>{
+        console.log(`Hello, my name is Roma`)
+    }
+    const Button3Foo = (name: string) =>{
+        console.log(`Hello, my name is ${name}`)
+    }
+    const Button4Foo = (name: string) =>{
+        console.log(`Hello, my name is ${name}`)
+    }
   return (
     <div className="App">
         {/*03-button-data*/}
@@ -59,8 +71,10 @@ function App() {
         {/*<button onClick={(event)=>{onClickHandler(event, "Valera")}}>MyYouTubeChannel-2</button>*/}
         {/*<button onClick={foo1}>1</button>*/}
         {/*<button onClick={()=>foo2(100200)}>2</button>*/}
-        <Button title={"MyYouTubeChannel-1"}/>
-        <Button title={"MyYouTubeChannel-2"}/>
+        <Button title={"MyYouTubeChannel-1"} callBack={Button1Foo}/>
+        <Button title={"MyYouTubeChannel-2"} callBack={Button2Foo}/>
+        <Button title={"MyYouTubeChannel-3"} callBack={()=>Button3Foo("Anton")}/>
+        <Button title={"MyYouTubeChannel-4"} callBack={()=>Button4Foo("Valera")}/>
 
         {/*01-site data */}
         {/*<Header titleForHeader={"NEW HEADER"}/>*/}
