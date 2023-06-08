@@ -11,7 +11,9 @@ type StudentsType = {
 export const NewComponent = (props: NewComponentType) => {
 	return (
 		<div>
-			NewComponent
+			<ul>
+				{props.students.map(el =><li key={el.id}> Name: {el.name}, {el.age} y.o.</li>)}
+			</ul>
 		</div>
 	);
 };
