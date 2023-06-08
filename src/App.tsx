@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 // import React, {MouseEvent} from "react";
 // import React, {useState} from 'react';
 import './App.css';
-import {Button} from "./03-button/components/Button";
+// import {Button} from "./03-button/components/Button";
 // import {Header} from "./01-site/Header";
 // import {Body} from "./01-site/Body";
 // import {Footer} from "./01-site/Footer";
@@ -51,30 +51,39 @@ function App() {
     // const onClickHandler = (event: MouseEvent<HTMLButtonElement>, name: string) => {
     //     console.log(`Hello, my name is ${name}`)
     // }
-    const Button1Foo = () =>{
-        console.log(`Hello, my name is Alex`)
-    }
-    const Button2Foo = () =>{
-        console.log(`Hello, my name is Roma`)
-    }
-    const Button3Foo = (name: string) =>{
-        console.log(`Hello, my name is ${name}`)
-    }
-    const Button4Foo = (name: string) =>{
-        console.log(`Hello, my name is ${name}`)
-    }
-    const Button5Foo = (name: string, age: number) =>{
-        console.log(`Hello, my name is ${name}. I'm ${age} y.o.`)
-    }
-    const Button6Foo = (name: string, age: number) =>{
-        console.log(`Hello, my name is ${name}. I'm ${age} y.o.`)
-    }
-    const Button7Foo = () =>{
-        console.log("I am just a button")
-    }
+    // const Button1Foo = () =>{
+    //     console.log(`Hello, my name is Alex`)
+    // }
+    // const Button2Foo = () =>{
+    //     console.log(`Hello, my name is Roma`)
+    // }
+    // const Button3Foo = (name: string) =>{
+    //     console.log(`Hello, my name is ${name}`)
+    // }
+    // const Button4Foo = (name: string) =>{
+    //     console.log(`Hello, my name is ${name}`)
+    // }
+    // const Button5Foo = (name: string, age: number) =>{
+    //     console.log(`Hello, my name is ${name}. I'm ${age} y.o.`)
+    // }
+    // const Button6Foo = (name: string, age: number) =>{
+    //     console.log(`Hello, my name is ${name}. I'm ${age} y.o.`)
+    // }
+    // const Button7Foo = () =>{
+    //     console.log("I am just a button")
+    // }
     /*------------------------------------------------*/
 
     // {/*04-useState-data*/}
+
+    let [initialNumber, setInitialNumber] = useState(1);
+    const onClickHandler = () => {
+        setInitialNumber(initialNumber + 1)
+        console.log(initialNumber+1)
+    }
+    const resetState = () => {
+        setInitialNumber(0)
+    }
 
   return (
     <div className="App">
@@ -93,15 +102,18 @@ function App() {
         {/*<button onClick={(event)=>{onClickHandler(event, "Valera")}}>MyYouTubeChannel-2</button>*/}
         {/*<button onClick={foo1}>1</button>*/}
         {/*<button onClick={()=>foo2(100200)}>2</button>*/}
-        <Button title={"MyYouTubeChannel-1"} callBack={Button1Foo}/>
-        <Button title={"MyYouTubeChannel-2"} callBack={Button2Foo}/>
-        <Button title={"MyYouTubeChannel-3"} callBack={()=>Button3Foo("Anton")}/>
-        <Button title={"MyYouTubeChannel-4"} callBack={()=>Button4Foo("Valera")}/>
-        <Button title={"MyYouTubeChannel-5"} callBack={()=>Button5Foo("Sergey", 25)}/>
-        <Button title={"MyYouTubeChannel-6"} callBack={()=>Button6Foo("Andrew", 33)}/>
-        <Button title={"MyYouTubeChannel-7"} callBack={Button7Foo}/>
+        {/*<Button title={"MyYouTubeChannel-1"} callBack={Button1Foo}/>*/}
+        {/*<Button title={"MyYouTubeChannel-2"} callBack={Button2Foo}/>*/}
+        {/*<Button title={"MyYouTubeChannel-3"} callBack={()=>Button3Foo("Anton")}/>*/}
+        {/*<Button title={"MyYouTubeChannel-4"} callBack={()=>Button4Foo("Valera")}/>*/}
+        {/*<Button title={"MyYouTubeChannel-5"} callBack={()=>Button5Foo("Sergey", 25)}/>*/}
+        {/*<Button title={"MyYouTubeChannel-6"} callBack={()=>Button6Foo("Andrew", 33)}/>*/}
+        {/*<Button title={"MyYouTubeChannel-7"} callBack={Button7Foo}/>*/}
         {/*------------------------------------------------*/}
         {/*04-useState-data*/}
+        <h1>{initialNumber}</h1>
+        <button onClick={onClickHandler}>Increase</button>
+        <button onClick={resetState}>Reset</button>
 
     </div>
   );
