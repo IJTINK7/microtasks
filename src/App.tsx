@@ -4,6 +4,7 @@ import './App.css';
 // import {Body} from "./01-site/Body";
 // import {Footer} from "./01-site/Footer";
 import {NewComponent} from "./02-map/NewComponent";
+import {TopCars} from "./02-map/TopCars";
 
 function App() {
     const [students, setStudents] = useState([
@@ -21,9 +22,15 @@ function App() {
         ]
     )
 
+    const topCars = [
+        {manufacturer:"BMW", model:'m5cs'},
+        {manufacturer:"Mercedes", model:'e63s'},
+        {manufacturer:"Audi", model:'rs6'}
+    ]
   return (
     <div className="App">
         <NewComponent students={students}/>
+        <TopCars topCars={topCars}/>
 
 
       {/*<Header titleForHeader={"NEW HEADER"}/>*/}
