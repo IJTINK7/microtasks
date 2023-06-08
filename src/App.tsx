@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, {MouseEvent} from "react";
+// import React, {useState} from 'react';
 import './App.css';
 // import {Header} from "./01-site/Header";
 // import {Body} from "./01-site/Body";
 // import {Footer} from "./01-site/Footer";
-import {NewComponent} from "./02-map/NewComponent";
-import {TopCars} from "./02-map/TopCars";
+// import {NewComponent} from "./02-map/NewComponent";
+// import {TopCars} from "./02-map/TopCars";
 
 function App() {
-    // 02-map data
+    // 02-map-data
     // const [students, setStudents] = useState([
     //         {id: 1, name: "James", age: 8},
     //         {id: 2, name: "Robert", age: 18},
@@ -28,9 +29,25 @@ function App() {
     //     {manufacturer:"Mercedes", model:'e63s'},
     //     {manufacturer:"Audi", model:'rs6'}
     // ]
+    // 03-button-data
+    // const myFirstSubscriber =(event: MouseEvent<HTMLButtonElement>) => {
+    //     console.log("Hello, my name is Anton!")
+    // }
+    // const mySecondSubscriber =(event: MouseEvent<HTMLButtonElement>) => {
+    //     console.log("Hello, my name is Valera!")
+    // }
+    const onClickHandler = (event: MouseEvent<HTMLButtonElement>, name: string) => {
+        console.log(`Hello, my name is ${name}`)
+    }
   return (
     <div className="App">
-        <button>MyYouTubeChannel-1</button>
+        {/*03-button-data*/}
+
+        {/*<button onClick={(event)=>{console.log("Hello")}}>MyYouTubeChannel-0</button>*/}
+        <button onClick={(event)=>{onClickHandler(event, "Anton")}}>MyYouTubeChannel-1</button>
+        <button onClick={(event)=>{onClickHandler(event, "Valera")}}>MyYouTubeChannel-2</button>
+
+
         {/*01-site data */}
         {/*<Header titleForHeader={"NEW HEADER"}/>*/}
         {/*<Body titleForBody={"NEW BODY"}/>*/}
