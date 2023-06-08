@@ -31,6 +31,7 @@ function App() {
     //     {manufacturer:"Mercedes", model:'e63s'},
     //     {manufacturer:"Audi", model:'rs6'}
     // ]
+    /*------------------------------------------------*/
     // 03-button-data
     // const myFirstSubscriber =(event: MouseEvent<HTMLButtonElement>) => {
     //     console.log("Hello, my name is Anton!")
@@ -62,10 +63,31 @@ function App() {
     const Button4Foo = (name: string) =>{
         console.log(`Hello, my name is ${name}`)
     }
+    const Button5Foo = (name: string, age: number) =>{
+        console.log(`Hello, my name is ${name}. I'm ${age} y.o.`)
+    }
+    const Button6Foo = (name: string, age: number) =>{
+        console.log(`Hello, my name is ${name}. I'm ${age} y.o.`)
+    }
+    const Button7Foo = () =>{
+        console.log("I am just a button")
+    }
+    /*------------------------------------------------*/
+
+    // {/*04-useState-data*/}
+
   return (
     <div className="App">
+         {/*01-site data */}
+        {/*<Header titleForHeader={"NEW HEADER"}/>*/}
+        {/*<Body titleForBody={"NEW BODY"}/>*/}
+        {/*<Footer titleForFooter={"NEW FOOTER"}/>*/}
+        {/*------------------------------------------------*/}
+        {/*02-map data*/}
+        {/*<NewComponent students={students}/>*/}
+        {/*<TopCars topCars={topCars}/>*/}
+        {/*------------------------------------------------*/}
         {/*03-button-data*/}
-
         {/*<button onClick={(event)=>{console.log("Hello")}}>MyYouTubeChannel-0</button>*/}
         {/*<button onClick={(event)=>{onClickHandler(event, "Anton")}}>MyYouTubeChannel-1</button>*/}
         {/*<button onClick={(event)=>{onClickHandler(event, "Valera")}}>MyYouTubeChannel-2</button>*/}
@@ -75,15 +97,12 @@ function App() {
         <Button title={"MyYouTubeChannel-2"} callBack={Button2Foo}/>
         <Button title={"MyYouTubeChannel-3"} callBack={()=>Button3Foo("Anton")}/>
         <Button title={"MyYouTubeChannel-4"} callBack={()=>Button4Foo("Valera")}/>
-
-        {/*01-site data */}
-        {/*<Header titleForHeader={"NEW HEADER"}/>*/}
-        {/*<Body titleForBody={"NEW BODY"}/>*/}
-        {/*<Footer titleForFooter={"NEW FOOTER"}/>*/}
+        <Button title={"MyYouTubeChannel-5"} callBack={()=>Button5Foo("Sergey", 25)}/>
+        <Button title={"MyYouTubeChannel-6"} callBack={()=>Button6Foo("Andrew", 33)}/>
+        <Button title={"MyYouTubeChannel-7"} callBack={Button7Foo}/>
         {/*------------------------------------------------*/}
-        {/*02-map data*/}
-        {/*<NewComponent students={students}/>*/}
-        {/*<TopCars topCars={topCars}/>*/}
+        {/*04-useState-data*/}
+
     </div>
   );
 }
