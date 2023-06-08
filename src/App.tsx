@@ -1,3 +1,4 @@
+// import React from "react";
 import React, {MouseEvent} from "react";
 // import React, {useState} from 'react';
 import './App.css';
@@ -36,6 +37,15 @@ function App() {
     // const mySecondSubscriber =(event: MouseEvent<HTMLButtonElement>) => {
     //     console.log("Hello, my name is Valera!")
     // }
+    // const onClickHandler = (event: MouseEvent<HTMLButtonElement>, name: string) => {
+    //     console.log(`Hello, my name is ${name}`)
+    // }
+    // const foo1=()=>{
+    //     console.log("Nothing")
+    // }
+    // const foo2=(sentNumber: number)=>{
+    //     console.log(sentNumber)
+    // }
     const onClickHandler = (event: MouseEvent<HTMLButtonElement>, name: string) => {
         console.log(`Hello, my name is ${name}`)
     }
@@ -44,9 +54,12 @@ function App() {
         {/*03-button-data*/}
 
         {/*<button onClick={(event)=>{console.log("Hello")}}>MyYouTubeChannel-0</button>*/}
+        {/*<button onClick={(event)=>{onClickHandler(event, "Anton")}}>MyYouTubeChannel-1</button>*/}
+        {/*<button onClick={(event)=>{onClickHandler(event, "Valera")}}>MyYouTubeChannel-2</button>*/}
+        {/*<button onClick={foo1}>1</button>*/}
+        {/*<button onClick={()=>foo2(100200)}>2</button>*/}
         <button onClick={(event)=>{onClickHandler(event, "Anton")}}>MyYouTubeChannel-1</button>
         <button onClick={(event)=>{onClickHandler(event, "Valera")}}>MyYouTubeChannel-2</button>
-
 
         {/*01-site data */}
         {/*<Header titleForHeader={"NEW HEADER"}/>*/}
