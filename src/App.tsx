@@ -76,14 +76,25 @@ function App() {
 
     // {/*04-useState-data*/}
 
-    let [initialNumber, setInitialNumber] = useState(1);
-    const onClickHandler = () => {
-        setInitialNumber(initialNumber + 1)
-        console.log(initialNumber+1)
-    }
-    const resetState = () => {
-        setInitialNumber(0)
-    }
+    // let [initialNumber, setInitialNumber] = useState(1);
+    // const onClickHandler = () => {
+    //     setInitialNumber(initialNumber + 1)
+    //     console.log(initialNumber+1)
+    // }
+    // const resetState = () => {
+    //     setInitialNumber(0)
+    // }
+    {/*05-filter-data*/}
+    const [money, setMoney] = useState([
+        {banknote: 'dollar', nominal: 100, number: ' a1234567890'},
+        {banknote: 'dollar', nominal: 50, number: ' z1234567890'},
+        {banknote: 'ruble', nominal: 100, number: ' w1234567890'},
+        {banknote: 'dollar', nominal: 100, number: ' e1234567890'},
+        {banknote: 'dollar', nominal: 50, number: ' c1234567890'},
+        {banknote: 'ruble', nominal: 100, number: ' r1234567890'},
+        {banknote: 'dollar', nominal: 50, number: ' x1234567890'},
+        {banknote: 'ruble', nominal: 50, number: ' v1234567890'},
+    ])
 
   return (
     <div className="App">
@@ -111,10 +122,21 @@ function App() {
         {/*<Button title={"MyYouTubeChannel-7"} callBack={Button7Foo}/>*/}
         {/*------------------------------------------------*/}
         {/*04-useState-data*/}
-        <h1>{initialNumber}</h1>
-        <button onClick={onClickHandler}>Increase</button>
-        <button onClick={resetState}>Reset</button>
-
+        {/*<h1>{initialNumber}</h1>*/}
+        {/*<button onClick={onClickHandler}>Increase</button>*/}
+        {/*<button onClick={resetState}>Reset</button>*/}
+        {/*05-filter-data*/}
+            <ul>
+                {money.map((el, index) => {
+                    return (
+                        <li key={index}>
+                            <span> {el.banknote}</span>
+                            <span> {el.nominal}</span>
+                            <span> {el.number}</span>
+                        </li>
+                    )
+                })}
+            </ul>
     </div>
   );
 }
