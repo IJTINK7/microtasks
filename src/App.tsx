@@ -9,6 +9,7 @@ import './App.css';
 // import {NewComponent} from "./02-map/NewComponent";
 // import {TopCars} from "./02-map/TopCars";
 
+type CurrencyType = 'all' | 'ruble' | 'dollar'
 function App() {
     // 02-map-data
     // const [students, setStudents] = useState([
@@ -84,7 +85,8 @@ function App() {
     // const resetState = () => {
     //     setInitialNumber(0)
     // }
-    {/*05-filter-data*/}
+
+    // 05-filter-data
     const [money, setMoney] = useState([
         {banknote: 'dollar', nominal: 100, number: ' a1234567890'},
         {banknote: 'dollar', nominal: 50, number: ' z1234567890'},
@@ -96,9 +98,13 @@ function App() {
         {banknote: 'ruble', nominal: 50, number: ' v1234567890'},
     ])
 
+    let currentMoney = money;
+    const onClickFilterHandler = (currency: CurrencyType) => {
+    //
+    }
   return (
     <div className="App">
-         {/*01-site data */}
+        {/*01-site data */}
         {/*<Header titleForHeader={"NEW HEADER"}/>*/}
         {/*<Body titleForBody={"NEW BODY"}/>*/}
         {/*<Footer titleForFooter={"NEW FOOTER"}/>*/}
@@ -127,7 +133,7 @@ function App() {
         {/*<button onClick={resetState}>Reset</button>*/}
         {/*05-filter-data*/}
             <ul>
-                {money.map((el, index) => {
+                {currentMoney.map((el, index) => {
                     return (
                         <li key={index}>
                             <span> {el.banknote}</span>
@@ -137,6 +143,11 @@ function App() {
                     )
                 })}
             </ul>
+        <div style={{marginLeft:"35px"}}>
+            <button onClick={()=> onClickFilterHandler("all")}>All</button>
+            <button onClick={()=> onClickFilterHandler("ruble")}>Ruble</button>
+            <button onClick={()=> onClickFilterHandler("dollar")}>Dollar</button>
+        </div>
     </div>
   );
 }
