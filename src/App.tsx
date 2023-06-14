@@ -87,21 +87,28 @@ function App() {
     // }
 
     // 05-filter-data
-    const [money, setMoney] = useState([
-        {banknote: 'dollar', nominal: 100, number: ' a1234567890'},
-        {banknote: 'dollar', nominal: 50, number: ' z1234567890'},
-        {banknote: 'ruble', nominal: 100, number: ' w1234567890'},
-        {banknote: 'dollar', nominal: 100, number: ' e1234567890'},
-        {banknote: 'dollar', nominal: 50, number: ' c1234567890'},
-        {banknote: 'ruble', nominal: 100, number: ' r1234567890'},
-        {banknote: 'dollar', nominal: 50, number: ' x1234567890'},
-        {banknote: 'ruble', nominal: 50, number: ' v1234567890'},
-    ])
-
-    let currentMoney = money;
-    const onClickFilterHandler = (currency: CurrencyType) => {
+    // const [money, setMoney] = useState([
+    //     {banknote: 'dollar', nominal: 100, number: ' a1234567890'},
+    //     {banknote: 'dollar', nominal: 50, number: ' z1234567890'},
+    //     {banknote: 'ruble', nominal: 100, number: ' w1234567890'},
+    //     {banknote: 'dollar', nominal: 100, number: ' e1234567890'},
+    //     {banknote: 'dollar', nominal: 50, number: ' c1234567890'},
+    //     {banknote: 'ruble', nominal: 100, number: ' r1234567890'},
+    //     {banknote: 'dollar', nominal: 50, number: ' x1234567890'},
+    //     {banknote: 'ruble', nominal: 50, number: ' v1234567890'},
+    // ])
+    // const [filter, setFilter] = useState("all");
     //
-    }
+    // let currentMoney = money;
+    // if(filter === "ruble"){
+    //     currentMoney = money.filter(el=>el.banknote === "ruble")
+    // }
+    // if(filter === "dollar"){
+    //     currentMoney = money.filter(el=>el.banknote === "dollar")
+    // }
+    // const onClickFilterHandler = (currency: CurrencyType) => {
+    //   setFilter(currency)
+    // }
   return (
     <div className="App">
         {/*01-site data */}
@@ -126,28 +133,34 @@ function App() {
         {/*<Button title={"MyYouTubeChannel-5"} callBack={()=>Button5Foo("Sergey", 25)}/>*/}
         {/*<Button title={"MyYouTubeChannel-6"} callBack={()=>Button6Foo("Andrew", 33)}/>*/}
         {/*<Button title={"MyYouTubeChannel-7"} callBack={Button7Foo}/>*/}
+
         {/*------------------------------------------------*/}
+
         {/*04-useState-data*/}
         {/*<h1>{initialNumber}</h1>*/}
         {/*<button onClick={onClickHandler}>Increase</button>*/}
         {/*<button onClick={resetState}>Reset</button>*/}
+
+        {/*------------------------------------------------*/}
+
         {/*05-filter-data*/}
-            <ul>
-                {currentMoney.map((el, index) => {
-                    return (
-                        <li key={index}>
-                            <span> {el.banknote}</span>
-                            <span> {el.nominal}</span>
-                            <span> {el.number}</span>
-                        </li>
-                    )
-                })}
-            </ul>
-        <div style={{marginLeft:"35px"}}>
-            <button onClick={()=> onClickFilterHandler("all")}>All</button>
-            <button onClick={()=> onClickFilterHandler("ruble")}>Ruble</button>
-            <button onClick={()=> onClickFilterHandler("dollar")}>Dollar</button>
-        </div>
+        {/*    <ul>*/}
+        {/*        {currentMoney.map((el, index) => {*/}
+        {/*            return (*/}
+        {/*                <li key={index}>*/}
+        {/*                    <span> {el.banknote}</span>*/}
+        {/*                    <span> {el.nominal}</span>*/}
+        {/*                    <span> {el.number}</span>*/}
+        {/*                </li>*/}
+        {/*            )*/}
+        {/*        })}*/}
+        {/*    </ul>*/}
+        {/*<div style={{marginLeft:"35px"}}>*/}
+        {/*    <button onClick={()=> onClickFilterHandler("all")}>All</button>*/}
+        {/*    <button onClick={()=> onClickFilterHandler("ruble")}>Ruble</button>*/}
+        {/*    <button onClick={()=> onClickFilterHandler("dollar")}>Dollar</button>*/}
+        {/*</div>*/}
+
     </div>
   );
 }
