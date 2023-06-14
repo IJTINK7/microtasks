@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 // import React, {MouseEvent} from "react";
 // import React, {useState} from 'react';
-import './App.css';
+// import './App.css';
 import {NewComponent} from "./05-filter/NewComponent";
 // import {Button} from "./03-button/components/Button";
 // import {Header} from "./01-site/Header";
@@ -10,7 +10,7 @@ import {NewComponent} from "./05-filter/NewComponent";
 // import {NewComponent} from "./02-map/NewComponent";
 // import {TopCars} from "./02-map/TopCars";
 
-export type CurrencyType = 'all' | 'ruble' | 'dollar'
+// export type CurrencyType = 'all' | 'ruble' | 'dollar'
 function App() {
     // 02-map-data
     // const [students, setStudents] = useState([
@@ -88,31 +88,38 @@ function App() {
     // }
 
     // 05-filter-data
-    const [money, setMoney] = useState([
-        {banknote: 'dollar', nominal: 100, number: ' a1234567890'},
-        {banknote: 'dollar', nominal: 50, number: ' z1234567890'},
-        {banknote: 'ruble', nominal: 100, number: ' w1234567890'},
-        {banknote: 'dollar', nominal: 100, number: ' e1234567890'},
-        {banknote: 'dollar', nominal: 50, number: ' c1234567890'},
-        {banknote: 'ruble', nominal: 100, number: ' r1234567890'},
-        {banknote: 'dollar', nominal: 50, number: ' x1234567890'},
-        {banknote: 'ruble', nominal: 50, number: ' v1234567890'},
-    ])
-    const [filter, setFilter] = useState("all");
+    // const [money, setMoney] = useState([
+    //     {banknote: 'dollar', nominal: 100, number: ' a1234567890'},
+    //     {banknote: 'dollar', nominal: 50, number: ' z1234567890'},
+    //     {banknote: 'ruble', nominal: 100, number: ' w1234567890'},
+    //     {banknote: 'dollar', nominal: 100, number: ' e1234567890'},
+    //     {banknote: 'dollar', nominal: 50, number: ' c1234567890'},
+    //     {banknote: 'ruble', nominal: 100, number: ' r1234567890'},
+    //     {banknote: 'dollar', nominal: 50, number: ' x1234567890'},
+    //     {banknote: 'ruble', nominal: 50, number: ' v1234567890'},
+    // ])
+    // const [filter, setFilter] = useState("all");
+    //
+    // let currentMoney = money;
+    // if(filter === "ruble"){
+    //     currentMoney = money.filter(el=>el.banknote === "ruble")
+    // }
+    // if(filter === "dollar"){
+    //     currentMoney = money.filter(el=>el.banknote === "dollar")
+    // }
+    // const onClickFilterHandler = (currency: CurrencyType) => {
+    //     setFilter(currency)
+    // }
+    // For final task 05-filter-data
+    // const onClickFilter = (currency: CurrencyType) => {
+    //   setFilter(currency)
+    // }
 
-    let currentMoney = money;
-    if(filter === "ruble"){
-        currentMoney = money.filter(el=>el.banknote === "ruble")
-    }
-    if(filter === "dollar"){
-        currentMoney = money.filter(el=>el.banknote === "dollar")
-    }
-    const onClickFilter = (currency: CurrencyType) => {
-      setFilter(currency)
-    }
+    {/*------------------------------------------------*/}
+    {/*06-input*/}
+
   return (
     <div className="App">
-        <NewComponent money={currentMoney} onClickFilter={onClickFilter}/>
         {/*01-site data */}
         {/*<Header titleForHeader={"NEW HEADER"}/>*/}
         {/*<Body titleForBody={"NEW BODY"}/>*/}
@@ -162,6 +169,12 @@ function App() {
         {/*    <button onClick={()=> onClickFilterHandler("ruble")}>Ruble</button>*/}
         {/*    <button onClick={()=> onClickFilterHandler("dollar")}>Dollar</button>*/}
         {/*</div>*/}
+        {/*For final task 05-filter-data*/}
+        {/*<NewComponent money={currentMoney} onClickFilter={onClickFilter}/>*/}
+
+        {/*------------------------------------------------*/}
+
+        {/*06-input*/}
 
     </div>
   );
