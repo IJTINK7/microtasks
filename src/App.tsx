@@ -2,7 +2,7 @@ import React from "react";
 // import React, {MouseEvent} from "react";
 // import React, {useState} from 'react';
 // import './App.css';
-import {NewComponent} from "./05-filter/NewComponent";
+// import {NewComponent} from "./05-filter/NewComponent";
 // import {Button} from "./03-button/components/Button";
 // import {Header} from "./01-site/Header";
 // import {Body} from "./01-site/Body";
@@ -10,7 +10,7 @@ import {NewComponent} from "./05-filter/NewComponent";
 // import {NewComponent} from "./02-map/NewComponent";
 // import {TopCars} from "./02-map/TopCars";
 
-// export type CurrencyType = 'all' | 'ruble' | 'dollar'
+export type CurrencyType = 'all' | 'ruble' | 'dollar'
 function App() {
     // 02-map-data
     // const [students, setStudents] = useState([
@@ -175,7 +175,7 @@ function App() {
         {/*------------------------------------------------*/}
 
         {/*06-input*/}
-
+        Hello
     </div>
   );
 }
