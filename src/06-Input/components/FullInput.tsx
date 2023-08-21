@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
-const FullInput = () => {
+type PropsType={
+	addNewMessage: (title: string)=>void
+}
+
+const FullInput = (props:PropsType) => {
+	let [title, setTitle] = useState("")
+	const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) =>{
+		setTitle(e.currentTarget.value)
+	}
+	const onClickButtonHandler = () =>{
+		props.addNewMessage(title)
+	}
 	return (
 		<div>
-			<div>
-				<input />
-				<button>+</button>
-			</div>
+			<input value={title} onChange={onChangeInputHandler}/>
+			<button onClick={onClickButtonHandler}>+</button>
 		</div>
 	);
 };
