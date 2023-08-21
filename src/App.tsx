@@ -1,18 +1,17 @@
 import React, {useState} from "react";
-import {Input} from "./06-Input/components/Input";
-import {Button} from "./06-Input/components/Button";
-// import React, {MouseEvent} from "react";
-// import React, {useState} from 'react';
-// import './App.css';
-// import {NewComponent} from "./05-filter/NewComponent";
-// import {Button} from "./03-button/components/Button";
-// import {Header} from "./01-site/Header";
-// import {Body} from "./01-site/Body";
-// import {Footer} from "./01-site/Footer";
-// import {NewComponent} from "./02-map/NewComponent";
-// import {TopCars} from "./02-map/TopCars";
+import {TaskType, Todolist} from "./07-Associative_Array/Todolist";
+import {v1} from "uuid";
 
 export type CurrencyType = 'all' | 'ruble' | 'dollar'
+export type FilterValuesType = "all" | "active" | "completed";
+export type TodolistsType = {
+    id: string
+    title: string
+    filter: FilterValuesType
+}
+export type TasksType = {
+    [key:string]: Array<TaskType>
+}
 function App() {
     // 02-map-data
     // const [students, setStudents] = useState([
@@ -119,23 +118,84 @@ function App() {
 
     {/*------------------------------------------------*/}
     {/*06-input*/}
-    const [message, setMessage] = useState([
-            {message: 'message1'},
-            {message: 'message2'},
-            {message: 'message3'},
-        ]
-    )
-
+    // const [message, setMessage] = useState([
+    //         {message: 'message1'},
+    //         {message: 'message2'},
+    //         {message: 'message3'},
+    //     ]
+    // )
+    //
     // const addNewMessage = (title: string) =>{
     //     setMessage([{message: title}, ...message])
     // }
+    //
+    // let [title, setTitle] = useState("")
+    // const callBackButtonHandler = () =>{
+    //     addNewMessage(title)
+    //     setTitle("")
+    // }
 
-    let [title, setTitle] = useState("")
-    const addNewMessage = () =>{
-        setMessage([{message: title}, ...message])
-        setTitle("")
+    {/*07-Associative array*/}
+    let todolistID1=v1();
+    let todolistID2=v1();
+
+    let [todolists, setTodolists] = useState<Array<TodolistsType>>([
+        {id: todolistID1, title: 'What to learn', filter: 'all'},
+        {id: todolistID2, title: 'What to buy', filter: 'all'},
+    ])
+
+    let [tasks, setTasks] = useState<TasksType>({
+        [todolistID1]:[
+            {id: v1(), title: "HTML&CSS", isDone: true},
+            {id: v1(), title: "JS", isDone: true},
+            {id: v1(), title: "ReactJS", isDone: false},
+            {id: v1(), title: "Rest API", isDone: false},
+            {id: v1(), title: "GraphQL", isDone: false},
+        ],
+        [todolistID2]:[
+            {id: v1(), title: "HTML&CSS2", isDone: true},
+            {id: v1(), title: "JS2", isDone: true},
+            {id: v1(), title: "ReactJS2", isDone: false},
+            {id: v1(), title: "Rest API2", isDone: false},
+            {id: v1(), title: "GraphQL2", isDone: false},
+        ]
+    });
+
+
+
+    function removeTask(id: string) {
+        // let filteredTasks = tasks.filter(t => t.id != id);
+        // setTasks(filteredTasks);
     }
 
+    function addTask(title: string) {
+        // let task = {id: v1(), title: title, isDone: false};
+        // let newTasks = [task, ...tasks];
+        // setTasks(newTasks);
+    }
+
+    function changeStatus(taskId: string, isDone: boolean) {
+        // let task = tasks.find(t => t.id === taskId);
+        // if (task) {
+        //     task.isDone = isDone;
+        // }
+        //
+        // setTasks([...tasks]);
+    }
+
+let [filter, setFilter] = useState<FilterValuesType>("all");
+    let tasksForTodolist = tasks;
+
+    // if (filter === "active") {
+    //     tasksForTodolist = tasks.filter(t => !t.isDone);
+    // }
+    // if (filter === "completed") {
+    //     tasksForTodolist = tasks.filter(t => t.isDone);
+    // }
+
+    function changeFilter(value: FilterValuesType) {
+        // setFilter(value);
+    }
   return (
     <div className="App">
         {/*01-site data */}
@@ -193,23 +253,35 @@ function App() {
         {/*------------------------------------------------*/}
 
         {/*06-input*/}
-        <div className="App">
+        {/*<div className="App">*/}
 
-            {/*<div>*/}
-            {/*    <input />*/}
-            {/*    <button>+</button>*/}
-            {/*</div>*/}
+        {/*    /!*<div>*!/*/}
+        {/*    /!*    <input />*!/*/}
+        {/*    /!*    <button>+</button>*!/*/}
+        {/*    /!*</div>*!/*/}
 
-            {/*<FullInput addNewMessage={addNewMessage}/>*/}
+        {/*    /!*<FullInput addNewMessage={addNewMessage}/>*!/*/}
 
-            <Input title={title} setTitle={setTitle}/>
-            <Button name={"+"} callBack={addNewMessage}/>
+        {/*    <Input title={title} setTitle={setTitle}/>*/}
+        {/*    <Button name={"+"} callBack={callBackButtonHandler}/>*/}
 
-            {message.map((el, index) => {
-                return (
-                    <div key={index}>{el.message}</div>
-                )
-            })}
+        {/*    {message.map((el, index) => {*/}
+        {/*        return (*/}
+        {/*            <div key={index}>{el.message}</div>*/}
+        {/*        )*/}
+        {/*    })}*/}
+        {/*</div>*/}
+
+        {/*07-Associative array*/}
+        <div>
+            <Todolist title="What to learn"
+                      tasks={tasksForTodolist}
+                      removeTask={removeTask}
+                      changeFilter={changeFilter}
+                      addTask={addTask}
+                      changeTaskStatus={changeStatus}
+                      filter={filter}
+            />
         </div>
     </div>
   );
