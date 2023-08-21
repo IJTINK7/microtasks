@@ -182,10 +182,10 @@ function App() {
 
         {/*06-input*/}
         <div className="App">
-            <div>
-                <input />
-                <button>+</button>
-            </div>
+            {/*<div>*/}
+            {/*    <input />*/}
+            {/*    <button>+</button>*/}
+            {/*</div>*/}
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
