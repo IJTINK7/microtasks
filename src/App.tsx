@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import FullInput from "./06-Input/components/FullInput";
 // import React, {MouseEvent} from "react";
 // import React, {useState} from 'react';
 // import './App.css';
@@ -186,6 +187,7 @@ function App() {
             {/*    <input />*/}
             {/*    <button>+</button>*/}
             {/*</div>*/}
+            <FullInput/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
