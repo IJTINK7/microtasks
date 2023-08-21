@@ -125,6 +125,10 @@ function App() {
         ]
     )
 
+    const addNewMessage = (title: string) =>{
+        console.log(title)
+    }
+
   return (
     <div className="App">
         {/*01-site data */}
@@ -187,7 +191,7 @@ function App() {
             {/*    <input />*/}
             {/*    <button>+</button>*/}
             {/*</div>*/}
-            <FullInput/>
+            <FullInput addNewMessage={addNewMessage}/>
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
