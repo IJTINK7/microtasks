@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 // import React, {MouseEvent} from "react";
 // import React, {useState} from 'react';
 // import './App.css';
@@ -117,6 +117,12 @@ function App() {
 
     {/*------------------------------------------------*/}
     {/*06-input*/}
+    const [message, setMessage] = useState([
+            {message: 'message1'},
+            {message: 'message2'},
+            {message: 'message3'},
+        ]
+    )
 
   return (
     <div className="App">
@@ -175,7 +181,17 @@ function App() {
         {/*------------------------------------------------*/}
 
         {/*06-input*/}
-        Hello
+        <div className="App">
+            <div>
+                <input />
+                <button>+</button>
+            </div>
+            {message.map((el, index) => {
+                return (
+                    <div key={index}>{el.message}</div>
+                )
+            })}
+        </div>
     </div>
   );
 }
