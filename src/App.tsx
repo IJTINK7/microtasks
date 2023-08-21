@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import FullInput from "./06-Input/components/FullInput";
+import {Input} from "./06-Input/components/Input";
+import {Button} from "./06-Input/components/Button";
 // import React, {MouseEvent} from "react";
 // import React, {useState} from 'react';
 // import './App.css';
@@ -125,8 +126,14 @@ function App() {
         ]
     )
 
-    const addNewMessage = (title: string) =>{
+    // const addNewMessage = (title: string) =>{
+    //     setMessage([{message: title}, ...message])
+    // }
+
+    let [title, setTitle] = useState("")
+    const addNewMessage = () =>{
         setMessage([{message: title}, ...message])
+        setTitle("")
     }
 
   return (
@@ -187,11 +194,17 @@ function App() {
 
         {/*06-input*/}
         <div className="App">
+
             {/*<div>*/}
             {/*    <input />*/}
             {/*    <button>+</button>*/}
             {/*</div>*/}
-            <FullInput addNewMessage={addNewMessage}/>
+
+            {/*<FullInput addNewMessage={addNewMessage}/>*/}
+
+            <Input title={title} setTitle={setTitle}/>
+            <Button name={"+"} callBack={addNewMessage}/>
+
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
