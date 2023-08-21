@@ -11,6 +11,7 @@ const FullInput = (props:PropsType) => {
 	}
 	const onClickButtonHandler = () =>{
 		props.addNewMessage(title)
+		setTitle("")
 	}
 	return (
 		<div>
