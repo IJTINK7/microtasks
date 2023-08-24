@@ -180,6 +180,10 @@ function App() {
 	function changeFilter(todolistID: string, value: FilterValuesType) {
 		setTodolists(todolists.map(el=>el.id === todolistID ? {...el, filter: value}: el));
 	}
+	const removeTodolist = (todolistID: string) => {
+		setTodolists(todolists.filter(el=>el.id !== todolistID))
+		delete tasks[todolistID]
+	}
 
 	return (
 		<div className="App">
@@ -277,6 +281,7 @@ function App() {
 					changeFilter={changeFilter}
 					addTask={addTask}
 					changeTaskStatus={changeStatus}
+					removeTodolist={removeTodolist}
 					filter={el.filter}
 				/>
 			})
