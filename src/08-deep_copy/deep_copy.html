@@ -140,8 +140,8 @@
         }
     };
 
-    let man6FullCopy  //  your code
-
+    let man6FullCopy = {...man6, mother: {...man6.mother, work: {...man6.mother.work}, parents: man6.mother.parents.map(el=> ({...el, favoriteDish: {...el.favoriteDish}}))}}
+    console.log(man6FullCopy)
 
     //10 Array of objects inside an object -> object -> array -> object ->  object
     let man7 = {
@@ -182,6 +182,6 @@
         }
     };
 
-    let man7FullCopy  //  your code
-
+    let man7FullCopy = {...man7, mother:{...man7.mother, work: {...man7.mother.work}, parents: man7.mother.parents.map(el=>({...el, favoriteDish:{...el.favoriteDish, ingredients: el.favoriteDish.ingredients.map(el=>({...el}))}}))}}
+    console.log(man7FullCopy)
 </script>
